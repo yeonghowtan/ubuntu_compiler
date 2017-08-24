@@ -16,6 +16,7 @@ RUN mkdir /etc/default/grub.d
 RUN echo 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT apparmor=1 security=apparmor"' \
   | tee /etc/default/grub.d/apparmor.cfg
 RUN update-grub
+RUN echo aa-status
 
 #C
 RUN apt-get install -y gcc
